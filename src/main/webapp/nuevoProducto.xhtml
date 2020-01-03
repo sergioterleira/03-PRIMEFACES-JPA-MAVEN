@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Nuevo Producto</title>
+</h:head>
+<h:body>
+	<center>
+		<h:form>
+			<p:panelGrid columns="2" cellspacing="20" border="1">
+				<f:facet name="header">
+					<h:outputText value="Nuevo Producto"></h:outputText>
+				</f:facet>
+
+				<h:outputText value="Name"></h:outputText>
+				<h:inputText value="#{producto.nombre}"></h:inputText>
+
+				<f:facet name="footer">
+					<h:commandButton action="#{productoBean.guardar(producto)}"
+						value="Guardar"></h:commandButton>
+				</f:facet>
+			</p:panelGrid>
+		</h:form>
+	</center>
+</h:body>
+</html>

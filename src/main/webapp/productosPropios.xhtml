@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Productos x Cliente #{cliente.id}</title>
+</h:head>
+<h:body>
+	<h2>
+		<p:outputLabel>Lista de Productos x Cliente #{cliente.id}</p:outputLabel>
+	</h2>
+	<h:form>		
+		<p:dataTable value="#{cliente.getProductos()}" var="producto">
+			<p:column>
+				<center>
+					<f:facet name="header">Id Producto</f:facet>
+					<h:outputText value="#{producto.id}"></h:outputText>
+				</center>
+			</p:column>
+			<p:column>
+				<center>
+					<f:facet name="header">Nombres</f:facet>
+					<h:outputText value="#{producto.nombre}"></h:outputText>
+				</center>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Editar Producto</f:facet>
+				<center>
+					<h:commandButton action="#{productoBean.editar(producto.id)}"
+						value="editar"></h:commandButton>
+				</center>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Eliminar Producto</f:facet>
+				<center>
+					<h:commandButton action="#{productoBean.eliminar(producto.id)}"
+						value="eliminar"></h:commandButton>
+				</center>
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>

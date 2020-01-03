@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Editar Producto #{producto.id}</title>
+</h:head>
+<h:body>
+	<center>
+	<h:form>
+		<p:panelGrid columns="2" cellspacing="20">
+			<h:outputText value="Id Producto"></h:outputText>
+			<h:outputText value="#{producto.id}"></h:outputText>			
+			<h:outputText value="Id Cliente"></h:outputText>
+			<h:outputText value="#{producto.cliente.id}"></h:outputText>
+			
+			<h:outputText value="Name"></h:outputText>
+			<h:inputText value="#{producto.nombre}"></h:inputText>
+			
+			<f:facet name="footer">
+				<center><h:commandButton action="#{ProductoBean.actualizar(producto)}" value="Actualizar"></h:commandButton></center>
+			</f:facet>
+		</p:panelGrid>
+	</h:form>
+	</center>
+</h:body>
+</html>
